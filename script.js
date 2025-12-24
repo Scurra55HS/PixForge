@@ -66,3 +66,14 @@ btnBorracha.addEventListener("click", () => {
     modoBorracha = !modoBorracha;
     btnBorracha.textContent = modoBorracha ? "Pintar" : "Borracha";
 });
+
+const btnSalvar = document.getElementById("btnSalvar");
+
+btnSalvar.addEventListener("click", () => {
+    html2canvas(canvas).then(canvasImg => {
+        const link = document.createElement("a");
+        link.download = "pixforge.png";
+        link.href = canvasImg.toDataURL();
+        link.click();
+    });
+});
