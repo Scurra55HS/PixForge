@@ -1,13 +1,12 @@
-// CONFIGURAÇÕES
 const seletorGrid = document.getElementById("gridSelect");
 const canvas = document.getElementById("canvasPixel");
 
 let tamanhoGrid = 16;
 let desenhando = false;
 
-// FUNÇÃO PRINCIPAL
 function criarGrid(tamanho) {
     canvas.innerHTML = "";
+
     canvas.style.gridTemplateColumns = `repeat(${tamanho}, 1fr)`;
     canvas.style.gridTemplateRows = `repeat(${tamanho}, 1fr)`;
 
@@ -16,13 +15,13 @@ function criarGrid(tamanho) {
         pixel.classList.add("pixel");
 
         pixel.addEventListener("mousedown", () => {
-            pixel.style.background = "#fff";
+            pixel.style.backgroundColor = "#fff";
             desenhando = true;
         });
 
         pixel.addEventListener("mouseover", () => {
             if (desenhando) {
-                pixel.style.background = "#fff";
+                pixel.style.backgroundColor = "#fff";
             }
         });
 
@@ -34,15 +33,13 @@ function criarGrid(tamanho) {
     }
 }
 
-// EVENTOS
 seletorGrid.addEventListener("change", () => {
     tamanhoGrid = Number(seletorGrid.value);
     criarGrid(tamanhoGrid);
 });
 
-document.body.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", () => {
     desenhando = false;
 });
 
-// INICIALIZA 
 criarGrid(tamanhoGrid);

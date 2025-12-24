@@ -65,7 +65,10 @@ header p {
     background: #333;
     border-radius: 6px;
     padding: 4px;
+    width: 400px;
+    max-width: 90vw;
 }
+
 
 .pixel {
     width: 100%;
