@@ -22,13 +22,13 @@ function criarGrid(tamanho) {
         pixel.classList.add("pixel");
 
         pixel.addEventListener("mousedown", () => {
-            pixel.style.backgroundColor = corAtual;
+            pixel.style.backgroundColor = modoBorracha ? "#111" : corAtual
             desenhando = true;
         });
 
         pixel.addEventListener("mouseover", () => {
             if (desenhando) {
-                pixel.style.backgroundColor = corAtual;
+                pixel.style.backgroundColor = modoBorracha ? "#111" : corAtual
             }
         });
 
@@ -57,4 +57,12 @@ btnLimpar.addEventListener("click", () => {
     document.querySelectorAll(".pixel").forEach(pixel => {
         pixel.style.backgroundColor = "#111";
     });
+});
+
+const btnBorracha = document.getElementById("btnBorracha");
+let modoBorracha = false;
+
+btnBorracha.addEventListener("click", () => {
+    modoBorracha = !modoBorracha;
+    btnBorracha.textContent = modoBorracha ? "Pintar" : "Borracha";
 });
