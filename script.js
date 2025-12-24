@@ -93,3 +93,17 @@ btnSalvar.addEventListener("click", () => {
         link.click();
     });
 });
+
+
+const inputBg = document.getElementById("inputBg");
+
+inputBg.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        canvas.style.backgroundImage = `url(${reader.result})`;
+    };
+    reader.readAsDataURL(file);
+});
