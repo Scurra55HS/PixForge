@@ -36,5 +36,4 @@ Sem frameworks. Sem bibliotecas externas.
 
 ---
 
-
 Feito com foco, prática e café ☕  
