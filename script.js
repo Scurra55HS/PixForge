@@ -7,6 +7,15 @@ let corAtual = seletorCor.value;
 let tamanhoGrid = 16;
 let desenhando = false;
 
+canvas.addEventListener("touchstart", e => {
+    desenhando = true;
+});
+
+canvas.addEventListener("touchend", () => {
+    desenhando = false;
+});
+
+
 seletorCor.addEventListener("change", () => {
     corAtual = seletorCor.value;
 });
@@ -35,6 +44,13 @@ function criarGrid(tamanho) {
         pixel.addEventListener("mouseup", () => {
             desenhando = false;
         });
+
+        pixel.addEventListener("touchmove", () => {
+            if (desenhando) {
+                pixel.style.backgroundColor = modoBorracha ? "#111" : corAtual;
+            }
+        });
+
 
         canvas.appendChild(pixel);
     }
