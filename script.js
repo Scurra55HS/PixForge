@@ -1,8 +1,15 @@
 const seletorGrid = document.getElementById("gridSelect");
 const canvas = document.getElementById("canvasPixel");
+const seletorCor = document.getElementById("seletorCor");
 
+
+let corAtual = seletorCor.value;
 let tamanhoGrid = 16;
 let desenhando = false;
+
+seletorCor.addEventListener("change", () => {
+    corAtual = seletorCor.value;
+});
 
 function criarGrid(tamanho) {
     canvas.innerHTML = "";
@@ -15,13 +22,13 @@ function criarGrid(tamanho) {
         pixel.classList.add("pixel");
 
         pixel.addEventListener("mousedown", () => {
-            pixel.style.backgroundColor = "#fff";
+            pixel.style.backgroundColor = corAtual;
             desenhando = true;
         });
 
         pixel.addEventListener("mouseover", () => {
             if (desenhando) {
-                pixel.style.backgroundColor = "#fff";
+                pixel.style.backgroundColor = corAtual;
             }
         });
 
