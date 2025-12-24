@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>PixForge</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="app">
+
+        <header>
+            <h1>PixForge</h1>
+            <p>Forjando pixel por pixel</p>
+        </header>
+
+        <section class="controles">
+            <label for="seletorGrid">Escolha o grid:</label>
+            <select id="seletorGrid">
+                <option value="8">8 x 8</option>
+                <option value="16">16 x 16</option>
+                <option value="32">32 x 32</option>
+            </select>
+        </section>
+
+        <section class="canvas-wrapper">
+            <div id="canvasPixel">
+                <!-- pixels vão nascer aqui -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
