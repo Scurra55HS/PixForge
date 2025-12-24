@@ -55,6 +55,14 @@ header p {
     cursor: pointer;
 }
 
+.controles button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #ff4d4d;
+    color: #fff;
+    cursor: pointer;
+}
 
 .controles select {
     padding: 8px;

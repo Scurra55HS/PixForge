@@ -50,3 +50,11 @@ document.addEventListener("mouseup", () => {
 });
 
 criarGrid(tamanhoGrid);
+
+const btnLimpar = document.getElementById("btnLimpar");
+
+btnLimpar.addEventListener("click", () => {
+    document.querySelectorAll(".pixel").forEach(pixel => {
+        pixel.style.backgroundColor = "#111";
+    });
+});
